@@ -130,7 +130,7 @@ gc_config() {
   if [ "x$GC_COLLECTOR" != "x" ]; then
     garbageCollector=$(echo "$GC_COLLECTOR")
   else
-    garbageCollector=$(echo "-XX:+UseParallelGC")
+    garbageCollector=$(echo "UseParallelGC")
   fi
  
   echo "-XX:+${garbageCollector} " \
