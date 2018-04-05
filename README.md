@@ -19,7 +19,7 @@ Steps for incorporating this change into your own container based on [registry.a
 oc create -f buildconfig.yml
 oc create -f imagestream.yml
 ~~~  
-3.  Run the build.
+3.  Run the build.  This will create a version of [registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift/images/1.2-7) that contains the modified [java-default-options](https://github.com/travisrogers05/java-s2i-gc/blob/master/java-default-options#L130) script.  This container will be named [java-s2i-gc](https://github.com/travisrogers05/java-s2i-gc/blob/master/buildconfig.yml#L26) by default.
 ~~~
 oc start-build java-s2i-gc
 ~~~
