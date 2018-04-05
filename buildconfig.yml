@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: java-s2i-gc
+  labels:
+    app: java-s2i-gc
+spec:
+  triggers:
+    - type: Generic
+      generic:
+        secret: dd9709d12d8eb1ba
+  runPolicy: Serial
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/travisrogers05/java-s2i-gc'
+      ref: master
+  strategy:
+    type: Source
+    dockerStrategy:
+      noCache: true
+      forcePull: true
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'redhat-openjdk18-openshift:1.2'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'java-s2i-gc:latest'
+  resources: {}
+  postCommit: {}
+  nodeSelector: null
