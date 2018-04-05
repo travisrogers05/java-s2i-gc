@@ -20,10 +20,6 @@ spec:
     dockerStrategy:
       noCache: true
       forcePull: true
-      from:
-        kind: ImageStreamTag
-        namespace: openshift
-        name: 'redhat-openjdk18-openshift:1.2'
   output:
     to:
       kind: ImageStreamTag
