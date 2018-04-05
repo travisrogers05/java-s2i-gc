@@ -115,10 +115,10 @@ gc_config() {
 
 ## Addition of a GC_COLLECTOR environment variable to act as a configuration point for selecting/changing the garbage collector of choice.
 ## Valid values would be:
-## -XX:+UseSerialGC
-## -XX:+UseConcMarkSweepGC
-## -XX:+UseG1GC
-## Where -XX:+UseParallelGC will be selected as a default if GC_COLLECTOR is not set.
+##  UseSerialGC
+##  UseConcMarkSweepGC
+##  UseG1GC
+## Where UseParallelGC will be selected as a default if GC_COLLECTOR is not set.
 
   local minHeapFreeRatio=${GC_MIN_HEAP_FREE_RATIO:-20}
   local maxHeapFreeRatio=${GC_MAX_HEAP_FREE_RATIO:-40}
@@ -133,7 +133,7 @@ gc_config() {
     garbageCollector=$(echo "-XX:+UseParallelGC")
   fi
  
-  echo "${garbageCollector} " \
+  echo "-XX:+${garbageCollector} " \
        "-XX:MinHeapFreeRatio=${minHeapFreeRatio} "\
        "-XX:MaxHeapFreeRatio=${maxHeapFreeRatio} "\
        "-XX:GCTimeRatio=${timeRatio} "\
