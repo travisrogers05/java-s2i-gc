@@ -17,7 +17,7 @@ oc start-build java-s2i-gc
 ~~~
 4.  Now use the resulting output container as the input for your Java application.
 
-Your application container will include the modified [java-default-options](https://github.com/travisrogers05/java-s2i-gc/blob/master/java-default-options) file and will allow you to use the `GC_COLLECTOR` environment variable at deploy time to configure the garbage collector of your choice.
+Your application container will include the modified [java-default-options](https://github.com/travisrogers05/java-s2i-gc/blob/master/java-default-options#L130) file and will allow you to use the `GC_COLLECTOR` environment variable at deploy time to configure the garbage collector of your choice.
 
 Valid values are:
 -  UseSerialGC
