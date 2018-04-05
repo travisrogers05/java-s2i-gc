@@ -32,7 +32,7 @@ oc new-app -f openjdk18-web-basic-s2i-modified.json
 
 Your application container will include the modified [java-default-options](https://github.com/travisrogers05/java-s2i-gc/blob/master/java-default-options#L130) file and will allow you to use the `GC_COLLECTOR` environment variable at deploy time to configure the garbage collector of your choice.
 
-Valid values are:
+Valid values for `GC_COLLECTOR` are:
 -  UseSerialGC
 -  UseConcMarkSweepGC
 -  UseG1GC
