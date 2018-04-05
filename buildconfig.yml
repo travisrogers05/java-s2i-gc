@@ -27,7 +27,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'java-s2i-gc:latest'
+      name: 'java-s2i-gc:1.0'
   resources: {}
   postCommit: {}
   nodeSelector: null
