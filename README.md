@@ -13,7 +13,7 @@ Files in this repository:
 
 Steps for incorporating this change into your own container based on [registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift/images/1.2-7):
 
-1.  Save the [buildconfig](https://github.com/travisrogers05/java-s2i-gc/blob/master/buildconfig.yml) and make any changes to it that you wish.
+1.  Save the [buildconfig](https://github.com/travisrogers05/java-s2i-gc/blob/master/buildconfig.yml) and [imagestream](https://github.com/travisrogers05/java-s2i-gc/blob/master/imagestream.yml) and make any changes to the files that you wish.
 2.  Create the buildconfig and imagestream in your Openshift project.
 ~~~
 oc create -f buildconfig.yml
@@ -26,7 +26,7 @@ oc start-build java-s2i-gc
 4.  Now use the resulting output container, imagestream or imagestreamtag as the input for your Java application.  The example name is java-s2i-gc.  Modify this to your liking.
 5.  Test the newly built container by creating an application pod and setting a different garbage collector.  The template sets `GC_COLLECTOR=UseG1GC`.
 ~~~
-oc create -f openjdk18-web-basic-s2i-modified.json
+oc new-app -f openjdk18-web-basic-s2i-modified.json
 ~~~
 
 
