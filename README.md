@@ -3,6 +3,12 @@ Example of adding a customized version of a Red Hat provided script.
 
 This example will place a modified copy of [java-default-options](https://github.com/jboss-openshift/cct_module/blob/sprint-13/os-java-run/added/java-default-options) into a container derived from imagestream [redhat-openjdk18-openshift:1.2](https://github.com/jboss-openshift/application-templates/blob/ose-v1.4.10-1/openjdk/openjdk18-image-stream.json#L63) resolving the issue reported at [CLOUD-2286](https://issues.jboss.org/browse/CLOUD-2286) in a local container build.
 
+Files in this repository:
+- Dockerfile - Used to copy the modified script into a container
+- buildconfig.yml - Used to define a build for a modified container
+- java-default-options - the modified script we are replacing
+- openjdk18-web-basic-s2i-modified.json - template to test an application pod built using the modified container
+
 
 Steps for incorporating this change into your own container based on [registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift/images/1.2-7):
 
